@@ -1,7 +1,7 @@
 from openai import OpenAI
 import streamlit as st
 
-st.title("ChatGPT-like clone")
+st.title("Ask >nearly< a Politician")
 
 client = OpenAI(api_key=st.secrets["TOKEN_CHATGPT"])
 
@@ -19,7 +19,7 @@ if user_input := st.chat_input("What is up?"):
     prompt = "Please answer the following question like a politician in two sentences. This means that you go into the topic as little as possible and don't say anything important about it, but just talk around it. The question:" + user_input
     st.session_state.messages.append({"role": "user", "content": prompt})
     with st.chat_message("user"):
-        st.markdown(prompt)
+        st.markdown(user_input)
     
     
 
