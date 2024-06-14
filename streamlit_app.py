@@ -15,8 +15,8 @@ for message in st.session_state.messages:
     with st.chat_message(message["role"]):
         st.markdown(message["content"])
 
-if prompt := st.chat_input("What is up?"):
-    prompt = "Please answer the following question like a politician in two sentences. This means that you go into the topic as little as possible and don't say anything important about it, but just talk around it. The question:" + prompt
+if user_input := st.chat_input("What is up?"):
+    prompt = "Please answer the following question like a politician in two sentences. This means that you go into the topic as little as possible and don't say anything important about it, but just talk around it. The question:" + user_input
     st.session_state.messages.append({"role": "user", "content": prompt})
     with st.chat_message("user"):
         st.markdown(prompt)
